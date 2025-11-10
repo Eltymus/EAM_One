@@ -1,0 +1,37 @@
+{
+  "home": {
+    "hero": {
+      "heading": "Mantenimiento optimizado: correctivo, preventivo y predictivo en un solo lugar.",
+      "subheading": "EAM One integra la gestión de mantenimiento con SAP Business One para que planifiques y controles tus activos con trazabilidad total y decisiones basadas en datos.",
+      "cta": "Solicitar demo"
+    },
+    "value_props": [
+      {
+        "title": "Integración con SAP Business One",
+        "text": "EAM One integra de forma nativa la gestión de mantenimiento con los procesos de Abastecimiento y Almacén de SAP Business One."
+      },
+      {
+        "title": "Desarrollada bajo los estándares de SAP",
+        "text": "EAM One es una aplicación web desarrollada bajo los estándares y recomendaciones de SAP, en un modelo de mínima intervención en el modelo funcional SAP de cada cliente."
+      },
+      {
+        "title": "Alojado en Amazon AWS",
+        "text": "Los datos propios de la gestión de mantenimiento se almacenan en un espacio propio de cada empresa usuaria, en la plataforma Amazon."
+      }
+    ],
+    "benefits": [
+      {
+        "title": "Reducción de costos de mantenimiento",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vestibulum ut est a molestie. Integer elementum diam mauris, non blandit ipsum sollicitudin eu."
+      },
+      {
+        "title": "Tablero de Control en tiempo real de las actividades en desarrollo y planificadas",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vestibulum ut est a molestie. Integer elementum diam mauris, non blandit ipsum sollicitudin eu."
+      },
+      {
+        "title": "Minimización de tiempos de parada de equipos",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vestibulum ut est a molestie. Integer elementum diam mauris, non blandit ipsum sollicitudin eu."
+      }
+    ]
+  }
+}
