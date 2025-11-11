@@ -14,7 +14,7 @@ import home from "../public/text.json";
 
 export default function Home() {
   return (
-    <main className="mx-auto max-w-7xl bg-linear-to-b from-amber-200 to-white">
+    <main className="mx-auto max-w-7xl bg-linear-to-b from-amber-100 from-10% to-white to-70%">
       <Nav />
       <Hero />
       <div className="mx-8 flex items-center justify-center sm:flex-col md:flex-row">
