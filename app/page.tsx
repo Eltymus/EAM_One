@@ -1,7 +1,8 @@
-import { Nav } from "./components/Navbar";
+import { Nav } from "./components/navbar";
 import { Hero } from "./components/hero";
 import { Description } from "./components/heroDescription";
 import { Cards } from "./components/card";
+import { LogoComp } from "./components/logoComposition";
 import {
   Accordion,
   AccordionContent,
@@ -65,7 +66,10 @@ export default function Home() {
           </AccordionPanel>
         ))}
       </Accordion>
-      <FormSubmit />
+      <div className="flex flex-row">
+        <LogoComp />
+        <FormSubmit />
+      </div>
     </main>
   );
 }

@@ -15,7 +15,8 @@ import { Button } from "flowbite-react";
 export function FormSubmit() {
   const [switch1, setSwitch1] = useState(false);
   return (
-    <div className="m-10 max-w-md items-center justify-center">
+    <div className="m-10 w-full items-center justify-center">
+      <p className="text-xl font-bold">Solicita una demostracion</p>
       <div className="my-4">
         <div className="mb-2 block">
           <Label htmlFor="Nombre">Nombre y apellido</Label>
@@ -71,7 +72,7 @@ export function FormSubmit() {
         />
       </div>
 
-      <div className="my-3 flex h-full w-full flex-row justify-center gap-10 rounded-2xl border border-gray-200 bg-white p-3 align-middle">
+      <div className="my-3 flex flex-row justify-center gap-10 rounded-2xl border border-gray-200 bg-white p-3 align-middle">
         <Chalkboard className="h-15 rounded-2xl bg-gray-100 p-2" />
         <div className="flex flex-col gap-2 rounded-3xl align-middle">
           <ToggleSwitch
