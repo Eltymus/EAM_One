@@ -3,6 +3,7 @@ import { Hero } from "./components/hero";
 import { Description } from "./components/heroDescription";
 import { Cards } from "./components/card";
 import { LogoComp } from "./components/logoComposition";
+import { Foot } from "./components/footer";
 import {
   Accordion,
   AccordionContent,
@@ -70,6 +71,7 @@ export default function Home() {
         <LogoComp />
         <FormSubmit />
       </div>
+      <Foot />
     </main>
   );
 }
