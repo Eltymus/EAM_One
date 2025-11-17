@@ -69,7 +69,7 @@ export default function Home() {
           </AccordionPanel>
         ))}
       </Accordion>
-      <div className="flex flex-row">
+      <div className="flex sm:flex-col md:flex-row">
         <LogoComp />
         <FormSubmit />
       </div>

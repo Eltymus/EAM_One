@@ -1,6 +1,6 @@
 export function LogoComp() {
   return (
-    <div className="mx-10 my-25 flex max-h-96 w-full flex-row gap-5">
+    <div className="mx-10 my-25 flex max-h-96 flex-row gap-5 md:w-full">
       <div className="content-end">
         <img
           src="EamOneDecorationB.png"
