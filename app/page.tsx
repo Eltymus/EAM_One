@@ -37,39 +37,44 @@ export default function Home() {
           Icon={Cloud}
         />
       </div>
-      <div className="mx-5 flex sm:flex-col sm:items-center md:flex-row md:items-baseline">
-        <Cards
-          title={home.home.benefits[0].title}
-          description={home.home.benefits[0].text}
-          picture={"/petrol1.png"}
-          altText="Imagen de sistema de gestion de mantenimiento"
-        />
+      <div id="advantages">
+        <div className="mx-5 flex sm:flex-col sm:items-center md:flex-row md:items-baseline">
+          <Cards
+            title={home.home.benefits[0].title}
+            description={home.home.benefits[0].text}
+            picture={"/petrol1.png"}
+            altText="Imagen de sistema de gestion de mantenimiento"
+          />
 
-        <Cards
-          title={home.home.benefits[1].title}
-          description={home.home.benefits[1].text}
-          picture="/petrol2.png"
-          altText="Imagen de sistema de gestion de mantenimiento"
-        />
-        <Cards
-          title={home.home.benefits[2].title}
-          description={home.home.benefits[2].text}
-          picture="/petrol3.png"
-          altText="Imagen de sistema de gestion de mantenimiento"
-        />
+          <Cards
+            title={home.home.benefits[1].title}
+            description={home.home.benefits[1].text}
+            picture="/petrol2.png"
+            altText="Imagen de sistema de gestion de mantenimiento"
+          />
+          <Cards
+            title={home.home.benefits[2].title}
+            description={home.home.benefits[2].text}
+            picture="/petrol3.png"
+            altText="Imagen de sistema de gestion de mantenimiento"
+          />
+        </div>
+        <Advantages />
       </div>
-      <Advantages />
-      <Accordion className="mx-8 my-8 bg-white">
-        {home.home.faq.items.map(({ question, answer }) => (
-          <AccordionPanel key={question}>
-            <AccordionTitle>{question}</AccordionTitle>
-            <AccordionContent>
-              <p className="mb-2 text-gray-700">{answer}</p>
-            </AccordionContent>
-          </AccordionPanel>
-        ))}
-      </Accordion>
-      <div className="flex sm:flex-col md:flex-row">
+      <div id="faq">
+        <Accordion className="mx-8 my-8 bg-white">
+          {home.home.faq.items.map(({ question, answer }) => (
+            <AccordionPanel key={question}>
+              <AccordionTitle>{question}</AccordionTitle>
+              <AccordionContent>
+                <p className="mb-2 text-gray-700">{answer}</p>
+              </AccordionContent>
+            </AccordionPanel>
+          ))}
+        </Accordion>
+      </div>
+
+      <div id="contact" className="flex sm:flex-col md:flex-row">
         <LogoComp />
         <FormSubmit />
       </div>

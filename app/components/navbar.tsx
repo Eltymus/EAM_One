@@ -14,9 +14,9 @@ export function Nav() {
         <img src="EAMONElogo.png" className="m-3 h-10" alt="EAM ONE Logo" />
       </NavbarBrand>
       <NavbarCollapse>
-        <NavbarLink href="#">Ventajas</NavbarLink>
-        <NavbarLink href="#">FAQs</NavbarLink>
-        <NavbarLink href="#">Contacto</NavbarLink>
+        <NavbarLink href="#advantages">Ventajas</NavbarLink>
+        <NavbarLink href="#faq">FAQs</NavbarLink>
+        <NavbarLink href="#contact">Contacto</NavbarLink>
       </NavbarCollapse>
       <div className="flex">
         <Button className="bg-amber-500 delay-150 duration-150 hover:bg-purple-500">
