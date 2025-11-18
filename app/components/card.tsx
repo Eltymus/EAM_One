@@ -3,7 +3,14 @@
 import { Card } from "flowbite-react";
 import Image from "next/image";
 
-export function Cards({ picture, altText, title, description }) {
+interface CardsProps {
+  picture: string;
+  altText: string;
+  title: string;
+  description: string;
+}
+
+export function Cards({ picture, altText, title, description }: CardsProps) {
   return (
     <Card
       className="m-5 min-h-full max-w-sm"

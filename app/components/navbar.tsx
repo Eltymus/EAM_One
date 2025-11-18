@@ -19,7 +19,10 @@ export function Nav() {
         <NavbarLink href="#contact">Contacto</NavbarLink>
       </NavbarCollapse>
       <div className="flex">
-        <Button className="bg-amber-500 delay-150 duration-150 hover:bg-purple-500">
+        <Button
+          href="#contact"
+          className="bg-amber-500 delay-150 duration-150 hover:bg-purple-500"
+        >
           Solicitar demo
         </Button>
         <NavbarToggle />
