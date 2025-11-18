@@ -15,7 +15,7 @@ import { Button } from "flowbite-react";
 export function FormSubmit() {
   const [switch1, setSwitch1] = useState(false);
   return (
-    <div className="m-10 w-full items-center justify-center">
+    <div className="sm:w1/2 m-10 items-center justify-center md:w-full">
       <p className="text-xl font-bold">Solicita una demostracion</p>
       <div className="my-4">
         <div className="mb-2 block">

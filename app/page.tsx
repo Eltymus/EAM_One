@@ -37,7 +37,7 @@ export default function Home() {
           Icon={Cloud}
         />
       </div>
-      <div className="mx-5 flex sm:flex-col md:flex-row">
+      <div className="mx-5 flex sm:flex-col sm:items-center md:flex-row md:items-baseline">
         <Cards
           title={home.home.benefits[0].title}
           description={home.home.benefits[0].text}
