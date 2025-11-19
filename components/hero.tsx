@@ -15,7 +15,10 @@ export function Hero() {
             y decisiones basadas en datos.
           </p>
         </div>
-        <Button className="bg-amber-500 delay-150 duration-150 hover:bg-purple-500">
+        <Button
+          className="bg-amber-500 delay-150 duration-150 hover:bg-purple-500"
+          href="#contact"
+        >
           Solicitar demo
         </Button>
       </div>

@@ -15,75 +15,119 @@ import { FormSubmit } from "../components/form";
 import { FixTables, CodePC, Cloud } from "./icons";
 import home from "../public/text.json";
 import { motion } from "motion/react";
+import { useRef } from "react";
 
 export default function Home() {
+  const scrollRef = useRef(null);
   return (
     <main className="bg-linear-to-b from-amber-100 from-10% to-white to-70%">
-      <div className="mx-auto max-w-7xl">
+      <motion.div
+        className="mx-auto max-w-7xl"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ root: scrollRef }}
+      >
         <Nav />
-        <Hero />
         <motion.div
-          animate={{ rotate: 360 }}
-          className="mx-8 flex flex-col items-center justify-center md:flex-row"
+          className="mx-auto max-w-7xl"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ root: scrollRef }}
         >
-          <Description
-            title={home.home.value_props[0].title}
-            description={home.home.value_props[0].text}
-            Icon={FixTables}
-          />
-          <Description
-            title={home.home.value_props[1].title}
-            description={home.home.value_props[1].text}
-            Icon={CodePC}
-          />
-          <Description
-            title={home.home.value_props[2].title}
-            description={home.home.value_props[2].text}
-            Icon={Cloud}
-          />
+          <Hero />
         </motion.div>
-        <div id="advantages">
-          <div className="mx-5 flex flex-col sm:items-center md:flex-row md:items-baseline">
-            <Cards
-              title={home.home.benefits[0].title}
-              description={home.home.benefits[0].text}
-              picture={"/petrol1.png"}
-              altText="Imagen de sistema de gestion de mantenimiento"
+        <motion.div
+          className="mx-auto max-w-7xl"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ root: scrollRef }}
+        >
+          <div className="mx-8 flex flex-col items-center justify-center md:flex-row">
+            <Description
+              title={home.home.value_props[0].title}
+              description={home.home.value_props[0].text}
+              Icon={FixTables}
             />
-
-            <Cards
-              title={home.home.benefits[1].title}
-              description={home.home.benefits[1].text}
-              picture="/petrol2.png"
-              altText="Imagen de sistema de gestion de mantenimiento"
+            <Description
+              title={home.home.value_props[1].title}
+              description={home.home.value_props[1].text}
+              Icon={CodePC}
             />
-            <Cards
-              title={home.home.benefits[2].title}
-              description={home.home.benefits[2].text}
-              picture="/petrol3.png"
-              altText="Imagen de sistema de gestion de mantenimiento"
+            <Description
+              title={home.home.value_props[2].title}
+              description={home.home.value_props[2].text}
+              Icon={Cloud}
             />
           </div>
-          <Advantages />
-        </div>
-        <div id="faq">
-          <Accordion className="mx-8 my-8 bg-white">
-            {home.home.faq.items.map(({ question, answer }) => (
-              <AccordionPanel key={question}>
-                <AccordionTitle>{question}</AccordionTitle>
-                <AccordionContent>
-                  <p className="mb-2 text-gray-700">{answer}</p>
-                </AccordionContent>
-              </AccordionPanel>
-            ))}
-          </Accordion>
-        </div>
+        </motion.div>
+        <motion.div
+          className="mx-auto max-w-7xl"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ root: scrollRef }}
+        >
+          <div id="advantages">
+            <div className="mx-5 flex flex-col sm:items-center md:flex-row md:items-baseline">
+              <Cards
+                title={home.home.benefits[0].title}
+                description={home.home.benefits[0].text}
+                picture={"/petrol1.png"}
+                altText="Imagen de sistema de gestion de mantenimiento"
+              />
 
-        <div id="contact" className="flex flex-col md:flex-row">
-          <LogoComp />
-          <FormSubmit />
-        </div>
-      </div>
+              <Cards
+                title={home.home.benefits[1].title}
+                description={home.home.benefits[1].text}
+                picture="/petrol2.png"
+                altText="Imagen de sistema de gestion de mantenimiento"
+              />
+              <Cards
+                title={home.home.benefits[2].title}
+                description={home.home.benefits[2].text}
+                picture="/petrol3.png"
+                altText="Imagen de sistema de gestion de mantenimiento"
+              />
+            </div>
+            <Advantages />
+          </div>
+        </motion.div>
+        <motion.div
+          className="mx-auto max-w-7xl"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ root: scrollRef }}
+        >
+          <div id="faq">
+            <Accordion className="mx-8 my-8 bg-white">
+              {home.home.faq.items.map(({ question, answer }) => (
+                <AccordionPanel key={question}>
+                  <AccordionTitle>{question}</AccordionTitle>
+                  <AccordionContent>
+                    <p className="mb-2 text-gray-700">{answer}</p>
+                  </AccordionContent>
+                </AccordionPanel>
+              ))}
+            </Accordion>
+          </div>
+        </motion.div>
+        <motion.div
+          className="mx-auto max-w-7xl"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ root: scrollRef }}
+        >
+          <div id="contact" className="flex flex-col md:flex-row">
+            <LogoComp />
+            <FormSubmit />
+          </div>
+        </motion.div>
+      </motion.div>
       <Foot />
     </main>
   );
