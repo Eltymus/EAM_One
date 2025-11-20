@@ -1,0 +1,133 @@
+{
+  "home": {
+    "hero": {
+      "heading": "Manutenzione ottimizzata: correttiva, preventiva e predittiva in un unico luogo.",
+      "subheading": "EAM One integra la gestione della manutenzione con SAP Business One per pianificare e controllare i tuoi asset con totale tracciabilità e decisioni basate sui dati.",
+      "cta": "Richiedi una demo"
+    },
+    "value_props": [
+      {
+        "title": "Integrazione con SAP Business One",
+        "text": "EAM One integra nativamente la gestione della manutenzione con i processi di approvvigionamento e magazzino di SAP Business One."
+      },
+      {
+        "title": "Sviluppata secondo gli standard SAP",
+        "text": "EAM One è un'applicazione web sviluppata secondo gli standard e le raccomandazioni SAP, con un modello di minima interferenza nel flusso funzionale di ogni cliente."
+      },
+      {
+        "title": "Ospitato su Amazon Web Services (AWS)",
+        "text": "I dati relativi alla gestione della manutenzione sono archiviati in uno spazio dedicato per ogni azienda sulla piattaforma Amazon Web Services (AWS)."
+      }
+    ],
+    "benefits": [
+      {
+        "title": "Riduzione dei costi di manutenzione – Manutenzione preventiva",
+        "text": "Grazie alla pianificazione ed esecuzione efficiente dei piani di manutenzione preventiva, è possibile anticipare i guasti e prolungare la vita utile delle attrezzature. Riducendo gli incidenti che comportano fermi macchina, si massimizzano i tempi di operatività."
+      },
+      {
+        "title": "Dashboard in tempo reale delle attività in corso e pianificate",
+        "text": "Il pianificatore può monitorare sull’apposita dashboard l’intero flusso del processo di manutenzione, come ordini di lavoro pianificati, in sospeso ed eventuali richieste aperte."
+      },
+      {
+        "title": "Integrazione con sistemi di terze parti",
+        "text": "Grazie a una potente API è possibile integrare EAM One con sistemi esterni, come per esempio sistemi di controllo veicolare. Ciò consente di automatizzare la registrazione dei 'contatori', potenziali trigger di richieste di manutenzione dai piani di manutenzione preventiva."
+      }
+    ],
+    "faq": {
+      "title": "Domande frequenti",
+      "items": [
+        {
+          "question": "È possibile ottenere automaticamente i valori di chilometraggio dei veicoli generati da sistemi di controllo?",
+          "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..."
+        },
+        {
+          "question": "È necessaria una licenza SAP Business One per utilizzare EAM One?",
+          "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..."
+        },
+        {
+          "question": "È possibile gestire la manutenzione di attrezzature di terzi (clienti)?",
+          "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..."
+        },
+        {
+          "question": "Come avviene la connessione tra EAM One e SAP?",
+          "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..."
+        },
+        {
+          "question": "Si può gestire la manutenzione predittiva con EAM One?",
+          "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..."
+        },
+        {
+          "question": "EAM One è utilizzabile da telefono o tablet?",
+          "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..."
+        }
+      ]
+    },
+    "benefit_icon": [
+      "Riduzione dei tempi di fermo delle attrezzature",
+      "Pianificazione delle attività di manutenzione",
+      "Registrazione di compiti, materiali e tempi negli Ordini di Lavoro",
+      "Accesso a manuali e documentazione",
+      "Accesso a foto descrittive del guasto",
+      "Costi di manutenzione delle attrezzature"
+    ],
+    "logoComposition": {
+      "creado_por": "Creato da:",
+      "suportando_por": "supportato da:"
+    },
+    "demo_form": {
+      "title": "Richiedi una demo",
+      "fields": [
+        {
+          "id": "Nombre",
+          "label": "Nome e cognome",
+          "placeholder": "Nome e cognome",
+          "type": "text",
+          "required": true,
+          "icon": "FaUser"
+        },
+        {
+          "id": "Empresa",
+          "label": "Azienda",
+          "placeholder": "Azienda",
+          "type": "text",
+          "required": true,
+          "icon": "FaStore"
+        },
+        {
+          "id": "Cargo",
+          "label": "Ruolo",
+          "placeholder": "Ruolo",
+          "type": "text",
+          "required": true,
+          "icon": "FaAddressCard"
+        },
+        {
+          "id": "Email",
+          "label": "Email",
+          "placeholder": "Email",
+          "type": "email",
+          "required": true,
+          "icon": "FaEnvelope"
+        },
+        {
+          "id": "Numero",
+          "label": "Numero di telefono",
+          "placeholder": "Numero di telefono",
+          "type": "tel",
+          "required": false,
+          "icon": "FaPhoneAlt"
+        }
+      ],
+      "uses_sap_business_one": {
+        "id": "switch1",
+        "label": "Utilizzo SAP Business One",
+        "type": "toggle",
+        "description": "Seleziona se utilizzi SAP Business One.",
+        "default": false
+      },
+      "submit": {
+        "label": "Richiedi demo"
+      }
+    }
+  }
+}

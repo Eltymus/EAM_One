@@ -1,0 +1,134 @@
+{
+  "home": {
+    "hero": {
+      "heading": "Mantenimiento optimizado: correctivo, preventivo y predictivo en un solo lugar.",
+      "subheading": "EAM One integra la gestión del mantenimiento con SAP Business One para que planifiques y controles tus activos con trazabilidad total y decisiones basadas en datos.",
+      "cta": "Solicitar demo"
+    },
+    "value_props": [
+      {
+        "title": "Integración con SAP Business One",
+        "text": "EAM One integra de forma nativa la gestión de mantenimiento con los procesos de abastecimiento y almacén de SAP Business One."
+      },
+      {
+        "title": "Desarrollada bajo los estándares de SAP",
+        "text": "EAM One es una aplicación web desarrollada según los estándares y recomendaciones de SAP, con un modelo de mínima intervención en el modelo funcional de cada cliente."
+      },
+      {
+        "title": "Alojado en Amazon Web Services (AWS)",
+        "text": "Los datos de la gestión de mantenimiento se almacenan en un espacio exclusivo para cada empresa usuaria en la plataforma Amazon Web Services (AWS)."
+      }
+    ],
+    "benefits": [
+      {
+        "title": "Reducción de costos de Mantenimiento - Mantenimiento Preventivo",
+        "text": "Mediante una eficiente planificación y ejecución de planes de mantenimiento preventivos, se anticipa la falla y se alarga la vida útil de los equipos. Al reducir los incidentes que implican paradas por fallas de los equipos, se maximizan los tiempos de operatividad de los mismos."
+      },
+      {
+        "title": "Tablero de control en tiempo real de las actividades en curso y planificadas",
+        "text": "El planificador podrá seguir en su tablero de control todo el flujo del proceso de Mantenimiento, como por ejemplo las Ordenes de Trabajo planificadas y pendientes de ejecución y las Solicitudes de Mantenimiento pendientes de atención."
+      },
+      {
+        "title": "Integración con sistemas de terceros",
+        "text": "Gracias a una potente Interfaz (API) es posible integrar EAM One con sistemas externos, como por ejemplo sistemas de control vehicular. De esta manera es posible automatizar la carga de 'contadores', que actúan como potenciales disparadores de solicitudes de Mantenimiento desde los Planes de Mantenimiento Preventivo."
+      }
+    ],
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "items": [
+        {
+          "question": "¿Es posible obtener automáticamente los valores de kilometraje de vehículos generados por sistemas de control vehicular?",
+          "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..."
+        },
+        {
+          "question": "¿Se requiere una licencia de SAP Business One para utilizar EAM One?",
+          "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..."
+        },
+        {
+          "question": "¿Es posible gestionar el mantenimiento de equipos de terceros (clientes)?",
+          "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..."
+        },
+        {
+          "question": "¿Cómo es la conexión de EAM One con SAP?",
+          "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..."
+        },
+        {
+          "question": "¿Se puede gestionar mantenimiento predictivo con EAM One?",
+          "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..."
+        },
+        {
+          "question": "¿Se puede usar EAM One desde teléfono o tablet?",
+          "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..."
+        }
+      ]
+    },
+    "benefit_icon": [
+      "Minimización de tiempos de parada de equipos",
+      "Planificación de actividades de Mantenimiento",
+      "Registro de tareas, insumos y tiempos en Ordenes de Trabajo",
+      "Acceso a Manuales y Documentación",
+      "Acceso a Fotos descriptivas de la Falla",
+      "Costos de Mantenimiento de Equipos"
+    ],
+    "logoComposition": {
+      "creado_por": "Nombre de la agencia o equipo (es. EAM One Team)",
+      "suportando_por": "Nombre del sponsor o partner (es. Partner / Sponsor)"
+    },
+    "demo_form": {
+      "title": "Solicita una demostracion",
+      "fields": [
+        {
+          "id": "Nombre",
+          "label": "Nombre y apellido",
+          "placeholder": "Nombre y apellido",
+          "type": "text",
+          "required": true,
+          "icon": "FaUser"
+        },
+        {
+          "id": "Empresa",
+          "label": "Empresa",
+          "placeholder": "Empresa",
+          "type": "text",
+          "required": true,
+          "icon": "FaStore"
+        },
+        {
+          "id": "Cargo",
+          "label": "Cargo",
+          "placeholder": "Cargo",
+          "type": "text",
+          "required": true,
+          "icon": "FaAddressCard"
+        },
+        {
+          "id": "Email",
+          "label": "Email",
+          "placeholder": "Email",
+          "type": "email",
+          "required": true,
+          "icon": "FaEnvelope"
+        },
+        {
+          "id": "Numero",
+          "label": "Numero de telefono",
+          "placeholder": "Numero de telefono",
+          "type": "tel",
+          "required": false,
+          "icon": "FaPhoneAlt"
+        }
+      ],
+      "uses_sap_business_one": {
+        "id": "switch1",
+        "label": "Utilizo SAP Business One",
+        "type": "toggle",
+        "description": "Selecciona si utilizas SAP Business One.",
+        "default": false
+      },
+      "submit": {
+        "label": "Solicitar demo",
+        "className": "bg-amber-500 tracking-wide delay-150 duration-150 hover:bg-purple-500"
+      }
+    }
+  }
+}
