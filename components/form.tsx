@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Label,
   TextInput,
@@ -17,6 +15,7 @@ import {
   FaPhoneAlt,
 } from "react-icons/fa";
 import { Button } from "flowbite-react";
+import { useTranslation } from "next-i18next";
 
 const customTheme = createTheme({
   textInput: {
@@ -112,13 +111,16 @@ const customTheme = createTheme({
 
 export function FormSubmit() {
   const [switch1, setSwitch1] = useState(false);
+  const { t } = useTranslation("home");
   return (
     <ThemeProvider theme={customTheme}>
       <div className="sm:w1/2 m-10 items-center justify-center md:w-full">
-        <p className="text-xl font-bold">Solicita una demostracion</p>
+        <div className="text-xl font-bold"> {t("home.demo_form.title")}</div>
         <div className="my-4">
           <div className="mb-2 block">
-            <Label htmlFor="Nombre">Nombre y apellido</Label>
+            <Label htmlFor="Nombre">
+              {t("home.demo_form.fields[0].label")}
+            </Label>
           </div>
           <TextInput
             id="Nombre"
