@@ -13,19 +13,15 @@ import {
 } from "flowbite-react";
 import { FormSubmit } from "../components/form";
 import { FixTables, CodePC, Cloud } from "./icons";
-import home from "../public/languages/es-419/home.json";
 import { motion } from "motion/react";
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import Head from "next/head";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function Home() {
   const scrollRef = useRef(null);
-  const { t } = useTranslation("home");
-  const valueProps = t("value_props", { returnObjects: true }) as any[];
-  const benefits =
-    (t("benefits", { ns: "home", returnObjects: true }) as any[]) ||
-    ((home?.home?.benefits as any[]) ?? []);
+  const { t } = useTranslation("common");
 
   return (
     <main className="bg-linear-to-b from-amber-100 from-10% to-white to-70%">
@@ -117,36 +113,18 @@ export default function Home() {
         >
           <div className="mx-8 flex flex-col items-center justify-center md:flex-row">
             <Description
-              title={
-                (valueProps as any[])?.[0]?.title ??
-                home?.home?.value_props?.[0]?.title
-              }
-              description={
-                (valueProps as any[])?.[0]?.text ??
-                home?.home?.value_props?.[0]?.text
-              }
+              title={t("home.value_props.0.title")}
+              description={t("home.value_props.0.text")}
               Icon={FixTables}
             />
             <Description
-              title={
-                (valueProps as any[])?.[1]?.title ??
-                home?.home?.value_props?.[1]?.title
-              }
-              description={
-                (valueProps as any[])?.[1]?.text ??
-                home?.home?.value_props?.[1]?.text
-              }
+              title={t("home.value_props.1.title")}
+              description={t("home.value_props.1.text")}
               Icon={CodePC}
             />
             <Description
-              title={
-                (valueProps as any[])?.[2]?.title ??
-                home?.home?.value_props?.[2]?.title
-              }
-              description={
-                (valueProps as any[])?.[2]?.text ??
-                home?.home?.value_props?.[2]?.text
-              }
+              title={t("home.value_props.2.title")}
+              description={t("home.value_props.2.text")}
               Icon={Cloud}
             />
           </div>
@@ -161,27 +139,21 @@ export default function Home() {
           <div id="advantages">
             <div className="mx-5 flex flex-col items-center md:flex-row md:items-baseline">
               <Cards
-                title={benefits[0]?.title ?? home?.home?.benefits?.[0]?.title}
-                description={
-                  benefits[0]?.text ?? home?.home?.benefits?.[0]?.text
-                }
+                title={t("home.benefits.0.title")}
+                description={t("home.benefits.0.text")}
                 picture={"/petrol1.png"}
                 altText="Imagen de sistema de gestion de mantenimiento"
               />
 
               <Cards
-                title={benefits[1]?.title ?? home?.home?.benefits?.[1]?.title}
-                description={
-                  benefits[1]?.text ?? home?.home?.benefits?.[1]?.text
-                }
+                title={t("home.benefits.1.title")}
+                description={t("home.benefits.1.text")}
                 picture="/petrol2.png"
                 altText="Imagen de sistema de gestion de mantenimiento"
               />
               <Cards
-                title={benefits[2]?.title ?? home?.home?.benefits?.[2]?.title}
-                description={
-                  benefits[2]?.text ?? home?.home?.benefits?.[2]?.text
-                }
+                title={t("home.benefits.2.title")}
+                description={t("home.benefits.2.text")}
                 picture="/petrol3.png"
                 altText="Imagen de sistema de gestion de manutenzione"
               />
@@ -198,11 +170,15 @@ export default function Home() {
         >
           <div id="faq">
             <Accordion className="mx-8 my-8 bg-white">
-              {home.home.faq.items.map(({ question, answer }) => (
-                <AccordionPanel key={question}>
-                  <AccordionTitle>{question}</AccordionTitle>
+              {[0, 1, 2, 3, 4, 5].map((index) => (
+                <AccordionPanel key={index}>
+                  <AccordionTitle>
+                    {t(`home.faq.items.${index}.question`)}
+                  </AccordionTitle>
                   <AccordionContent>
-                    <p className="mb-2 text-gray-700">{answer}</p>
+                    <p className="mb-2 text-gray-700">
+                      {t(`home.faq.items.${index}.answer`)}
+                    </p>
                   </AccordionContent>
                 </AccordionPanel>
               ))}
@@ -225,4 +201,12 @@ export default function Home() {
       <Foot />
     </main>
   );
+}
+
+export async function getServerSideProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
 }
