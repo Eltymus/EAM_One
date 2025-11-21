@@ -87,6 +87,7 @@ export default function Home() {
         />
       </Head>
 
+      <Nav />
       <motion.div
         className="mx-auto max-w-7xl"
         initial={{ opacity: 0, y: 20 }}
@@ -94,7 +95,6 @@ export default function Home() {
         transition={{ duration: 0.5 }}
         viewport={{ root: scrollRef }}
       >
-        <Nav />
         <motion.div
           className="mx-auto max-w-7xl"
           initial={{ opacity: 0, y: 20 }}
