@@ -5,43 +5,27 @@ import {
   TbArchive,
   TbSettings,
 } from "react-icons/tb";
-
+import { useTranslation } from "next-i18next";
 import { TagText } from "./tagText";
 
 export function Advantages() {
+  const { t } = useTranslation();
+
   return (
     <div className="m-10 flex flex-col md:flex-row">
       <div className="content-center items-center pr-5 text-center">
-        <p className="m-5 text-2xl font-bold">
-          Control total del mantenimiento, en tiempo real con tablero
-          inteligente
-        </p>
-        <p className="m-5">
-          Reduce costos, minimiza paradas y gestiona tareas con integraciones y
-          trazabilidad histórica — todo desde un único tablero en tiempo real.
-        </p>
+        <p className="m-5 text-2xl font-bold">{t("home.advantages.title")}</p>
+        <p className="m-5">{t("home.advantages.description")}</p>
       </div>
       <div className="m-5 grid gap-10 sm:grid-cols-1 md:grid-cols-2">
+        <TagText description={t("home.benefit_icon.0")} Icon={TbFlag} />
         <TagText
-          description="Reducción de costos de mantenimiento"
-          Icon={TbFlag}
-        />
-        <TagText
-          description="Posibilidad de integración con sistemas externos"
+          description={t("home.benefit_icon.1")}
           Icon={TbTopologyStar3}
         />
-        <TagText
-          description="Tablero de Control en tiempo real de las actividades en desarrollo y planificadas"
-          Icon={TbDeviceTablet}
-        />
-        <TagText
-          description="Trazabilidad histórica de las tareas de mantenimiento de cada equipo"
-          Icon={TbArchive}
-        />
-        <TagText
-          description="Minimización de tiempos de parada de equipos"
-          Icon={TbSettings}
-        />
+        <TagText description={t("home.benefit_icon.2")} Icon={TbDeviceTablet} />
+        <TagText description={t("home.benefit_icon.3")} Icon={TbArchive} />
+        <TagText description={t("home.benefit_icon.4")} Icon={TbSettings} />
       </div>
     </div>
   );

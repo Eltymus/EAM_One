@@ -62,6 +62,10 @@
         }
       ]
     },
+    "advantages": {
+      "title": "Controllo totale della manutenzione, in tempo reale con dashboard intelligente",
+      "description": "Riduci i costi, minimizza i fermi e gestisci le attività con integrazioni e tracciabilità storica — tutto da un'unica dashboard in tempo reale."
+    },
     "benefit_icon": [
       "Riduzione dei tempi di fermo delle attrezzature",
       "Pianificazione delle attività di manutenzione",

@@ -13,11 +13,11 @@ interface CardsProps {
 export function Cards({ picture, altText, title, description }: CardsProps) {
   return (
     <Card
-      className="m-3 max-w-sm"
+      className="h-[650px] w-full items-center"
       renderImage={() => (
         <Image
           width={500}
-          height={500}
+          height={40}
           src={picture}
           alt={altText}
           className="rounded-3xl p-4"

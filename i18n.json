@@ -1,0 +1,8 @@
+{
+  "locales": ["en", "es-419", "it"],
+  "defaultLocale": "es-419",
+  "pages": {
+    "*": ["home"],
+    "/[lang]": ["home"]
+  }
+}

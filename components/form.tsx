@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Label,
   TextInput,
@@ -8,6 +6,7 @@ import {
   ThemeProvider,
 } from "flowbite-react";
 import { useState } from "react";
+import React from "react";
 import { Chalkboard } from "../pages/icons";
 import {
   FaUser,
@@ -17,6 +16,7 @@ import {
   FaPhoneAlt,
 } from "react-icons/fa";
 import { Button } from "flowbite-react";
+import { useTranslation } from "react-i18next";
 
 const customTheme = createTheme({
   textInput: {
@@ -112,139 +112,45 @@ const customTheme = createTheme({
 
 export function FormSubmit() {
   const [switch1, setSwitch1] = useState(false);
-  const [formData, setFormData] = useState({
-    nombre: "",
-    empresa: "",
-    cargo: "",
-    email: "",
-    numero: "",
-  });
+  const { t } = useTranslation("common");
 
-  // Gestione dei cambiamenti nei campi di input
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.id.toLowerCase()]: e.target.value,
-    });
-  };
+  const fields = t("home.demo_form.fields", { returnObjects: true }) as any[];
+  const useSapSwitch = t("home.demo_form.uses_sap_business_one", {
+    returnObjects: true,
+  }) as any;
+  const submitBtn = t("home.demo_form.submit", { returnObjects: true }) as any;
 
-  // Funzione per l'invio del form
-  const handleSubmit = async (e) => {
-    e.preventDefault(); // Impedisce il ricaricamento della pagina
-
-    // Crea un oggetto FormData per inviare i dati al PHP
-    const dataToSend = new FormData();
-    for (const key in formData) {
-      dataToSend.append(key, formData[key]);
-    }
-    // Aggiungi lo stato dello switch
-    dataToSend.append("sap", switch1 ? "on" : "off");
-
-    // URL del tuo file PHP sul server
-    const phpUrl = "https://tuodominio.com/send_mail.php";
-
-    try {
-      const response = await fetch(phpUrl, {
-        method: "POST",
-        body: dataToSend, // Invio dei dati come FormData
-      });
-
-      const result = await response.json();
-
-      if (response.ok && result.status === "success") {
-        alert("Richiesta inviata con successo!");
-        // Opzionale: pulisci il form qui
-      } else {
-        alert("Errore nell'invio della richiesta: " + result.message);
-      }
-    } catch (error) {
-      console.error("Errore di rete o invio:", error);
-      alert("Si è verificato un errore durante l'invio.");
-    }
+  const iconMap: { [key: string]: any } = {
+    FaUser,
+    FaStore,
+    FaAddressCard,
+    FaEnvelope,
+    FaPhoneAlt,
   };
 
   return (
     <ThemeProvider theme={customTheme}>
-      <form
-        onSubmit={handleSubmit}
-        className="sm:w1/2 m-10 items-center justify-center md:w-full"
-      >
-        <p className="text-xl font-bold">Solicita una demostracion</p>
+      <div className="sm:w1/2 m-10 items-center justify-center md:w-full">
+        <div className="text-xl font-bold">{t("home.demo_form.title")}</div>
 
-        {/* Campo: Nombre y apellido */}
-        <div className="my-4">
-          <div className="mb-2 block">
-            <Label htmlFor="Nombre">Nombre y apellido</Label>
+        {fields.map((field: any) => (
+          <div key={field.id} className="my-4">
+            <div className="mb-2 block">
+              <Label htmlFor={field.id}>{field.label}</Label>
+            </div>
+            <TextInput
+              id={field.id}
+              placeholder={field.placeholder}
+              type={field.type}
+              addon={
+                iconMap[field.icon]
+                  ? React.createElement(iconMap[field.icon])
+                  : undefined
+              }
+              required={field.required}
+            />
           </div>
-          <TextInput
-            id="Nombre"
-            placeholder="Nombre y apellido"
-            addon={<FaUser />}
-            required
-            onChange={handleChange}
-            value={formData.nombre}
-          />
-        </div>
-
-        {/* Campo: Empresa */}
-        <div className="my-4">
-          <div className="mb-2 block">
-            <Label htmlFor="Empresa">Empresa</Label>
-          </div>
-          <TextInput
-            id="Empresa"
-            placeholder="Empresa"
-            addon={<FaStore />}
-            required
-            onChange={handleChange}
-            value={formData.empresa}
-          />
-        </div>
-
-        {/* Campo: Cargo */}
-        <div className="my-4">
-          <div className="mb-2 block">
-            <Label htmlFor="Cargo">Cargo</Label>
-          </div>
-          <TextInput
-            id="Cargo"
-            placeholder="Cargo"
-            addon={<FaAddressCard />}
-            required
-            onChange={handleChange}
-            value={formData.cargo}
-          />
-        </div>
-
-        {/* Campo: Email */}
-        <div className="my-4">
-          <div className="mb-2 block">
-            <Label htmlFor="Email">Email</Label>
-          </div>
-          <TextInput
-            id="Email"
-            placeholder="Email"
-            type="email" // Aggiungi il tipo corretto
-            addon={<FaEnvelope />}
-            required
-            onChange={handleChange}
-            value={formData.email}
-          />
-        </div>
-
-        {/* Campo: Numero de telefono */}
-        <div className="my-4">
-          <div className="mb-2 block">
-            <Label htmlFor="Numero">Numero de telefono</Label>
-          </div>
-          <TextInput
-            id="Numero"
-            placeholder="Numero de telefono"
-            addon={<FaPhoneAlt />}
-            onChange={handleChange}
-            value={formData.numero}
-          />
-        </div>
+        ))}
 
         {/* Toggle Switch */}
         <div className="my-3 flex flex-row justify-center gap-10 rounded-2xl border border-gray-200 bg-white p-3 align-middle">
@@ -253,23 +159,16 @@ export function FormSubmit() {
             <ToggleSwitch
               className="text-amber-500"
               checked={switch1}
-              label="Utilizo SAP Business One"
+              label={useSapSwitch.label}
               onChange={setSwitch1}
             />
-            <p className="text-gray-500">
-              Selecciona si utilizas SAP Business One.
-            </p>
+            <p className="text-gray-500">{useSapSwitch.description}</p>
           </div>
         </div>
 
         {/* Bottone di Invio */}
         <div className="flex justify-center">
-          <Button
-            type="submit"
-            className="bg-amber-500 tracking-wide delay-150 duration-150 hover:bg-purple-500"
-          >
-            Solicitar demo
-          </Button>
+          <Button className={submitBtn.className}>{submitBtn.label}</Button>
         </div>
       </form>
     </ThemeProvider>
