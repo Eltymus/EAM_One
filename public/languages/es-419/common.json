@@ -62,6 +62,10 @@
         }
       ]
     },
+    "advantages": {
+      "title": "Control total del mantenimiento, en tiempo real con tablero inteligente",
+      "description": "Reduce costos, minimiza paradas y gestiona tareas con integraciones y trazabilidad histórica — todo desde un único tablero en tiempo real."
+    },
     "benefit_icon": [
       "Minimización de tiempos de parada de equipos",
       "Planificación de actividades de Mantenimiento",

@@ -6,6 +6,7 @@ import {
   ThemeProvider,
 } from "flowbite-react";
 import { useState } from "react";
+import React from "react";
 import { Chalkboard } from "../pages/icons";
 import {
   FaUser,
@@ -15,7 +16,7 @@ import {
   FaPhoneAlt,
 } from "react-icons/fa";
 import { Button } from "flowbite-react";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "react-i18next";
 
 const customTheme = createTheme({
   textInput: {
@@ -111,67 +112,45 @@ const customTheme = createTheme({
 
 export function FormSubmit() {
   const [switch1, setSwitch1] = useState(false);
-  const { t } = useTranslation("home");
+  const { t } = useTranslation("common");
+
+  const fields = t("home.demo_form.fields", { returnObjects: true }) as any[];
+  const useSapSwitch = t("home.demo_form.uses_sap_business_one", {
+    returnObjects: true,
+  }) as any;
+  const submitBtn = t("home.demo_form.submit", { returnObjects: true }) as any;
+
+  const iconMap: { [key: string]: any } = {
+    FaUser,
+    FaStore,
+    FaAddressCard,
+    FaEnvelope,
+    FaPhoneAlt,
+  };
+
   return (
     <ThemeProvider theme={customTheme}>
       <div className="sm:w1/2 m-10 items-center justify-center md:w-full">
-        <div className="text-xl font-bold"> {t("home.demo_form.title")}</div>
-        <div className="my-4">
-          <div className="mb-2 block">
-            <Label htmlFor="Nombre">
-              {t("home.demo_form.fields[0].label")}
-            </Label>
+        <div className="text-xl font-bold">{t("home.demo_form.title")}</div>
+
+        {fields.map((field: any) => (
+          <div key={field.id} className="my-4">
+            <div className="mb-2 block">
+              <Label htmlFor={field.id}>{field.label}</Label>
+            </div>
+            <TextInput
+              id={field.id}
+              placeholder={field.placeholder}
+              type={field.type}
+              addon={
+                iconMap[field.icon]
+                  ? React.createElement(iconMap[field.icon])
+                  : undefined
+              }
+              required={field.required}
+            />
           </div>
-          <TextInput
-            id="Nombre"
-            placeholder="Nombre y apellido"
-            addon={<FaUser />}
-            required
-          />
-        </div>
-        <div className="my-4">
-          <div className="mb-2 block">
-            <Label htmlFor="Empresa">Empresa</Label>
-          </div>
-          <TextInput
-            id="Empresa"
-            placeholder="Empresa"
-            addon={<FaStore />}
-            required
-          />
-        </div>
-        <div className="my-4">
-          <div className="mb-2 block">
-            <Label htmlFor="Cargo">Cargo</Label>
-          </div>
-          <TextInput
-            id="Cargo"
-            placeholder="Cargo"
-            addon={<FaAddressCard />}
-            required
-          />
-        </div>
-        <div className="my-4">
-          <div className="mb-2 block">
-            <Label htmlFor="Email">Email</Label>
-          </div>
-          <TextInput
-            id="Email"
-            placeholder="Email"
-            addon={<FaEnvelope />}
-            required
-          />
-        </div>
-        <div className="my-4">
-          <div className="mb-2 block">
-            <Label htmlFor="Numero">Numero de telefono</Label>
-          </div>
-          <TextInput
-            id="Numero"
-            placeholder="Numero de telefono"
-            addon={<FaPhoneAlt />}
-          />
-        </div>
+        ))}
 
         <div className="my-3 flex flex-row justify-center gap-10 rounded-2xl border border-gray-200 bg-white p-3 align-middle">
           <Chalkboard className="h-15 rounded-2xl bg-gray-100 p-2" />
@@ -179,18 +158,14 @@ export function FormSubmit() {
             <ToggleSwitch
               className="text-amber-500"
               checked={switch1}
-              label="Utilizo SAP Business One"
+              label={useSapSwitch.label}
               onChange={setSwitch1}
             />
-            <p className="text-gray-500">
-              Selecciona si utilizas SAP Business One.
-            </p>
+            <p className="text-gray-500">{useSapSwitch.description}</p>
           </div>
         </div>
         <div className="flex justify-center">
-          <Button className="bg-amber-500 tracking-wide delay-150 duration-150 hover:bg-purple-500">
-            Solicitar demo
-          </Button>
+          <Button className={submitBtn.className}>{submitBtn.label}</Button>
         </div>
       </div>
     </ThemeProvider>

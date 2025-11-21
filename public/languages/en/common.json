@@ -62,6 +62,10 @@
         }
       ]
     },
+    "advantages": {
+      "title": "Full maintenance control, in real time with intelligent dashboard",
+      "description": "Reduce costs, minimize downtime and manage tasks with integrations and historical traceability — all from a single real-time dashboard."
+    },
     "benefit_icon": [
       "Minimization of equipment downtime",
       "Maintenance activity planning",

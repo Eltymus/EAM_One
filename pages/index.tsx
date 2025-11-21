@@ -15,7 +15,7 @@ import { FormSubmit } from "../components/form";
 import { FixTables, CodePC, Cloud } from "./icons";
 import { motion } from "motion/react";
 import { useRef } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 import Head from "next/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
@@ -137,7 +137,7 @@ export default function Home() {
           viewport={{ root: scrollRef }}
         >
           <div id="advantages">
-            <div className="mx-5 flex flex-col items-center md:flex-row md:items-baseline">
+            <div className="m-5 flex flex-col items-center gap-5 md:flex-row">
               <Cards
                 title={t("home.benefits.0.title")}
                 description={t("home.benefits.0.text")}

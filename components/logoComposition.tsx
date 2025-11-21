@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 export function LogoComp() {
+  const { t } = useTranslation("common");
+
   return (
     <div className="mx-10 my-25 flex max-h-96 flex-row gap-5 md:w-full">
       <div className="content-end">
@@ -11,9 +15,9 @@ export function LogoComp() {
       <div className="w-full content-center">
         <div className="flex flex-col items-center justify-center">
           <img src="EAMONElogo.png" alt="logo Eam One" className="my-12 h-16" />
-          <p>Creado por</p>
+          <p>{t("home.logoComposition.creado_por")}</p>
           <img src="B1dev_black.png" alt="Logo B1 dev" />
-          <p>soportado por:</p>
+          <p>{t("home.logoComposition.suportando_por")}</p>
           <img
             src="logosPragmatica.png"
             alt="Couple of logos rapresenting Pragmatica consulktores and IT Sur"
